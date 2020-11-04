@@ -5,8 +5,8 @@ def apply_coupons(cart, coupons)
     coupons.each do |coupon|
       if cart_item[:item] == coupon[:item]
         cart_item[:num] -= coupon[:num]
-      end 
-    end 
+      end
+    end
   end
   cart
 end
