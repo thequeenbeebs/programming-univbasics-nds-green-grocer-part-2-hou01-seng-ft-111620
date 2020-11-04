@@ -12,7 +12,6 @@ def apply_coupons(cart, coupons)
           :count => coupon[:num]
         }
         cart.push(discount)
-      end
     end
   end
   cart
