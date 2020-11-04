@@ -3,7 +3,7 @@ require_relative './part_1_solution.rb'
 def apply_coupons(cart, coupons)
   cart.each do |cart_item|
     coupons.each do |coupon|
-      if cart_item[:item] == coupon[:item]
+      if cart_item[:item] == coupon[:item] && cart_item[:count] > coupon[:num]
         cart_item[:count] -= coupon[:num]
         discount = {
           :item => "#{coupon[:item]} W/COUPON",
