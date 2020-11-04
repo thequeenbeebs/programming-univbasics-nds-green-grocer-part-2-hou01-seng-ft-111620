@@ -1,9 +1,14 @@
 require_relative './part_1_solution.rb'
 
 def apply_coupons(cart, coupons)
-  # Consult README for inputs and outputs
-  #
-  # REMEMBER: This method **should** update cart
+  cart.each do |cart_item|
+    coupons.each do |coupon|
+      if cart_item[:item] == coupon[:item]
+        cart_item[:num] -= coupon[:num]
+      end 
+    end 
+  end
+  cart
 end
 
 def apply_clearance(cart)
