@@ -4,7 +4,14 @@ def apply_coupons(cart, coupons)
   cart.each do |cart_item|
     coupons.each do |coupon|
       if cart_item[:item] == coupon[:item]
-        cart_item[:num] -= coupon[:num]
+        cart_item[:count] -= coupon[:num]
+        discount = {
+          :item => "#{coupon[:item]} W/COUPON"
+          :price => coupon[:cost] / coupon[:num]
+          :clearance => cart_item[:clearance]
+          :count => coupon[:num]
+        }
+        cart.push(discount)
       end
     end
   end
